@@ -9,14 +9,17 @@ final appRouter = GoRouter(
   initialLocation: '/',
   routes: [
     GoRoute(
+      name: HomeScreeen.name, //el name es opcional cogemos el name del atributo estatico de la clase
       path: '/',
       builder: (context, state) => const HomeScreeen(),
     ),
     GoRoute(
+      name: ButtonsScreen.name, //el name es opcional cogemos el name del atributo estatico de la clase
       path: '/buttons',
       builder: (context, state) => const ButtonsScreen(),
     ),
     GoRoute(
+      name: CardsScreen.name, //el name es opcional cogemos el name del atributo estatico de la clase
       path: '/cards',
       builder: (context, state) => const CardsScreen(),
     ),

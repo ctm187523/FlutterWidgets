@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:widgets_app/config/menu/menu_items.dart';
+import 'package:widgets_app/presentation/screens/screens.dart';
 
 
 class HomeScreeen extends StatelessWidget {
+
+  //ponemos los name para el routing de go_route es opcional
+  //lo ponemos estatico para poder acceder de las configuraciones de las rutas en  el archivo go_router.dart creado
+  static const String name = 'home_screen';
+
+  //constructor
   const HomeScreeen({super.key});
 
   @override
@@ -83,7 +90,12 @@ class _CustomListTile extends StatelessWidget {
         //Navigator.pushNamed(context, menuItem.link);
 
         //uso go_router creado en config/router/app_router, usamos menuItem creado en config/menu/menu_items
-        context.push(menuItem.link);
+        //LO COMENTO PORQUE AUNQUE SIGO USANDO go_router UTILIZO LOS NAMES 
+        //context.push(menuItem.link);
+
+        //uso go_router usando names la de arriba comentada tambien seria valida
+        //de esta manera es mas facil actualizar la ruta
+        context.pushNamed(CardsScreen.name);
       },
     );
   }
