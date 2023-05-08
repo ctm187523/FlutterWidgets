@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:widgets_app/config/menu/menu_items.dart';
-import 'package:widgets_app/presentation/screens/buttons/buttons_screens.dart';
+
 
 class HomeScreeen extends StatelessWidget {
   const HomeScreeen({super.key});
@@ -38,11 +39,15 @@ class _HomeView extends StatelessWidget {
 }
 
 class _CustomListTile extends StatelessWidget {
+
+  //atributos
+   final MenuItem menuItem;
+
+  //constructor
   const _CustomListTile({
     required this.menuItem,
   });
 
-  final MenuItem menuItem;
 
   @override
   Widget build(BuildContext context) {
@@ -52,11 +57,12 @@ class _CustomListTile extends StatelessWidget {
     //usamios el widget ListTile para manejar listas
     return ListTile(
       leading:
-          Icon(menuItem.icon, color: colors.primary), //icono antes del widget
-      trailing: Icon(
-        Icons.arrow_forward_ios_rounded,
-        color: colors.primary,
-      ), //icono de la derecha
+        Icon(menuItem.icon, color: colors.primary), //icono antes del widget
+          //icono de la derecha
+        trailing: Icon(
+          Icons.arrow_forward_ios_rounded,
+          color: colors.primary,
+       ), 
       title: Text(menuItem.title),
       subtitle: Text(menuItem.subTitle),
       //metodo gestual al pulsar el icono para realizar acciones
@@ -73,7 +79,11 @@ class _CustomListTile extends StatelessWidget {
         // );
 
         //usamos Navigator para navegar entre pantallas
-        Navigator.pushNamed(context, menuItem.link);
+        //LO COMENTAMOS PORQUE FINALMENTE USO go_router
+        //Navigator.pushNamed(context, menuItem.link);
+
+        //uso go_router creado en config/router/app_router, usamos menuItem creado en config/menu/menu_items
+        context.push(menuItem.link);
       },
     );
   }
