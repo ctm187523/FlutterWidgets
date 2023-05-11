@@ -12,7 +12,7 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //ponemos MaterialApp.router para configurar el router si usamos go_route
+    //ponemos MaterialApp.router para configurar el router si usamos go_route, homeScreen es la ruta inicial '/'
     return MaterialApp.router(
       routerConfig: appRouter, //usamos la definicion de routes de go_router creada en config/router/app_router
       debugShowCheckedModeBanner: false,

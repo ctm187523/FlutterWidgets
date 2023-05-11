@@ -93,10 +93,11 @@ class _CustomListTile extends StatelessWidget {
         //LO COMENTO PORQUE AUNQUE SIGO USANDO go_router UTILIZO LOS NAMES 
         //context.push(menuItem.link);
 
-        //uso go_router usando names la de arriba comentada tambien seria valida
-        //de esta manera es mas facil actualizar la ruta
-        context.pushNamed(CardsScreen.name);
+        //uso go_router usando push la de arriba comentada tambien seria valida
+        //de esta manera es mas facil actualizar la ruta, usamos de menuitem el link de la ruta
+        context.push(menuItem.link); 
       },
     );
   }
 }
+
