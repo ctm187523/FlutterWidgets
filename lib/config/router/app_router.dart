@@ -28,5 +28,10 @@ final appRouter = GoRouter(
       path: '/progress',
       builder: (context, state) => const ProgressScreen(), //widget al que nos dirigimos
     ),
+    GoRoute(
+      name: SnackbarScreen.name, //el name es opcional cogemos el name del atributo estatico de la clase
+      path: '/snackbars',
+      builder: (context, state) => const SnackbarScreen(), //widget al que nos dirigimos
+    ),
   ],
 );

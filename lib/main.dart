@@ -14,6 +14,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     //ponemos MaterialApp.router para configurar el router si usamos go_route, homeScreen es la ruta inicial '/'
     return MaterialApp.router(
+      title: 'Flutter Widgets', //titulo de la aplicacion
       routerConfig: appRouter, //usamos la definicion de routes de go_router creada en config/router/app_router
       debugShowCheckedModeBanner: false,
       theme: AppTheme(selectedColor: 2).getTheme(), //usamos la clase creada para el theme
