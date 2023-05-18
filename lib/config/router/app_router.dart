@@ -33,5 +33,10 @@ final appRouter = GoRouter(
       path: '/snackbars',
       builder: (context, state) => const SnackbarScreen(), //widget al que nos dirigimos
     ),
+    GoRoute(
+      name: AnimatedScreen.name, //el name es opcional cogemos el name del atributo estatico de la clase
+      path: '/animated',
+      builder: (context, state) => const AnimatedScreen(), //widget al que nos dirigimos
+    ),
   ],
 );
