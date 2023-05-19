@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 class AnimatedScreen extends StatefulWidget {
 
   static const name = 'animatedScreen';
+
   //constructor
   const AnimatedScreen({super.key});
 

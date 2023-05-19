@@ -38,5 +38,10 @@ final appRouter = GoRouter(
       path: '/animated',
       builder: (context, state) => const AnimatedScreen(), //widget al que nos dirigimos
     ),
+    GoRoute(
+      name: UIControlsScreen.name, //el name es opcional cogemos el name del atributo estatico de la clase
+      path: '/ui-controls',
+      builder: (context, state) => const UIControlsScreen(), //widget al que nos dirigimos
+    ),
   ],
 );

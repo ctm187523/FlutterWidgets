@@ -17,7 +17,7 @@ class MainApp extends StatelessWidget {
       title: 'Flutter Widgets', //titulo de la aplicacion
       routerConfig: appRouter, //usamos la definicion de routes de go_router creada en config/router/app_router
       debugShowCheckedModeBanner: false,
-      theme: AppTheme(selectedColor: 2).getTheme(), //usamos la clase creada para el theme
+      theme: AppTheme(selectedColor: 5).getTheme(), //usamos la clase creada para el theme
       
       //creamos las rutas para la navegacion entre pantallas
       //LO COMENTAMOS PORQUE USO go_route
