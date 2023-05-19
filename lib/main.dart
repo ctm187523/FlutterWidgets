@@ -19,7 +19,7 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme(selectedColor: 5).getTheme(), //usamos la clase creada para el theme
       
-      //creamos las rutas para la navegacion entre pantallas
+      //creamos las rutas para la navegacion entre pantallas5
       //LO COMENTAMOS PORQUE USO go_route
       // routes: {
       //   '/buttons':(context) => const ButtonsScreen(),
