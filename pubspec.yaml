@@ -7,11 +7,13 @@ environment:
   sdk: '>=2.19.6 <3.0.0'
 
 dependencies:
+  animate_do: ^3.0.2
   flutter:
     sdk: flutter
   go_router: ^7.0.0
 
 dev_dependencies:
+  animated_toggle_switch: ^0.6.2
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
@@ -19,6 +21,6 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-# creamos la ruta de las assets donde estan las imagenes
-assets:
- - assets/images
+  # creamos la ruta de las assets donde estan las imagenes,fijarse en la tabulacion de assets
+  assets:
+    - assets/images/
