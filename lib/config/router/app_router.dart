@@ -44,5 +44,10 @@ final appRouter = GoRouter(
       path: '/tutorial',
       builder: (context, state) => const AppTutorialScreen(), //widget al que nos dirigimos
     ),
+     GoRoute(
+      name: InfiniteScrollScreen.name, //el name es opcional cogemos el name del atributo estatico de la clase
+      path: '/infinite',
+      builder: (context, state) => const InfiniteScrollScreen(), //widget al que nos dirigimos
+    ),
   ],
 );
