@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:widgets_app/config/menu/menu_items.dart';
+import 'package:widgets_app/presentation/widgets/side_menu.dart';
 
 
 class HomeScreeen extends StatelessWidget {
@@ -14,11 +15,20 @@ class HomeScreeen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final scaffoldKey = GlobalKey<ScaffoldState>(); //creamos un objeto GlobalKey para obtener la referencia del estado actual del Scaffold
+
     return Scaffold(
+      key: scaffoldKey, //usamos la varaible scaffoldKey creada arriba para obtener la referencia dels estado del scaffold lo usaremos en el side_menu
       appBar: AppBar(
         title: const Text('Flutter + Material 3'),
       ),
       body: const _HomeView(),
+      //ponemos un menu lateral, tenemos los widgets drawer y endDrawer dependiendo si e menu se abre
+      //a la derecha o izquierda, el drawer se abre desde la izquierda, usamos
+      //en el drawer el NavigationDrawer que seran donde van las opciones del menu, lo usamos
+      //en el archivo side_menu.dart de la carpteta widgets
+      drawer: SideMenu( scaffoldKey: scaffoldKey), //usamos la clase SideMenu de Widgets/side_menu,mandamos la varaible scaffolfKey creada arriba para mandar el estado del scaffold de esta clase
     );
   }
 }
