@@ -38,6 +38,12 @@ final appRouter = GoRouter(
       path: '/animated',
       builder: (context, state) => const AnimatedScreen(), //widget al que nos dirigimos
     ),
+
+      GoRoute(
+      path: '/ui-controls',
+      name: UIControlsScreen.name,
+      builder: (context, state) => const UIControlsScreen(),
+    ),
     
     GoRoute(
       name: AppTutorialScreen.name, //el name es opcional cogemos el name del atributo estatico de la clase
@@ -48,6 +54,16 @@ final appRouter = GoRouter(
       name: InfiniteScrollScreen.name, //el name es opcional cogemos el name del atributo estatico de la clase
       path: '/infinite',
       builder: (context, state) => const InfiniteScrollScreen(), //widget al que nos dirigimos
+    ),
+     GoRoute(
+      name: CounterScreen.name, //el name es opcional cogemos el name del atributo estatico de la clase
+      path: '/counter_screen',
+      builder: (context, state) => const CounterScreen(), //widget al que nos dirigimos
+    ),
+     GoRoute(
+      name: ThemeChangerScreen.name, //el name es opcional cogemos el name del atributo estatico de la clase
+      path: '/theme-changer',
+      builder: (context, state) => const ThemeChangerScreen(), //widget al que nos dirigimos
     ),
   ],
 );
