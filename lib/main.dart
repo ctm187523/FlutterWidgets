@@ -24,17 +24,21 @@ class MainApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
 
-    //recibimos el estado de Riverppod
-    final int selectedColor = ref.watch(selectedColorProvider);
-    final bool isDarkmode = ref.watch(isDarkmodeProvider);
+    //recibimos el estado de Riverppod, los comentamos porque usamos otro estado de theme_provider mas generico para manejar el theme
+    //final int selectedColor = ref.watch(selectedColorProvider);
+    //final bool isDarkmode = ref.watch(isDarkmodeProvider);
+
+    final AppTheme appTheme = ref.watch(themeNotifierProvider);
 
     //ponemos MaterialApp.router para configurar el router si usamos go_route, homeScreen es la ruta inicial '/'
     return MaterialApp.router(
       title: 'Flutter Widgets', //titulo de la aplicacion
       routerConfig: appRouter, //usamos la definicion de routes de go_router creada en config/router/app_router
       debugShowCheckedModeBanner: false,
-      //usamos el estado obtenido arriba para cambiar el color seleccionado y el tema dark o light
-      theme: AppTheme(selectedColor: selectedColor, isDarkmode: isDarkmode).getTheme(), //usamos la clase creada para el theme seleccionamos el color y el tema oscuro o claro
+      //usamos el estado obtenido arriba para cambiar el color seleccionado y el tema dark o light, lo comentamos porque usamos el estado generico themeNotifierProvider de theme_provider
+      //theme: AppTheme(selectedColor: selectedColor, isDarkmode: isDarkmode).getTheme(), //usamos la clase creada para el theme seleccionamos el color y el tema oscuro o claro
+      
+      theme: appTheme.getTheme(), //usamos el metodo getTheme para obtener el Theme creado arriba en el provider de Riverpood de theme_provider, obtenemos el metodo getTheme ya que themeNotifierProvider es una instancia de la clase app_theme
       
       //creamos las rutas para la navegacion entre pantallas5
       //LO COMENTAMOS PORQUE USO go_route

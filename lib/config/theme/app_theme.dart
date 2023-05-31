@@ -39,4 +39,19 @@ class AppTheme {
       )
     );
 
+    //creamos un metodo que devuelve una nueva instancia de la clase AppTheme
+    //el copyWith es un metodo para copiar clases, para que puedan ser cambiadas sus propiedades
+    //al no ser final podemos cambiar sus propiedades
+    AppTheme copyWith({
+
+      //constuctor siempre opcionales
+      int? selectedColor,
+      bool? isDarkmode
+
+      }) => AppTheme( //creamos una instancia y le pasamos los atributos si no vienen( ?? ) ya que son opcionales pasamos los mismos de la clase
+      selectedColor: selectedColor ?? this.selectedColor,
+      isDarkmode: isDarkmode ?? this.isDarkmode
+    );
+    
+
 }

@@ -17,7 +17,10 @@ class ThemeChangerScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context,WidgetRef ref ) {
 
-    final bool isDarkmode = ref.watch( isDarkmodeProvider);
+    //comentamos la linea de abajo porque usaremos el provider de Riverpood creado en theme_provider themeNotifierProvider
+    //que es mas general
+    //final bool isDarkmode = ref.watch( isDarkmodeProvider);
+    final bool isDarkmode = ref.watch( themeNotifierProvider).isDarkmode; //usamos la propiedad isDarkmode para manejar el booleano de dark o light
 
     return Scaffold(
       appBar: AppBar(
@@ -27,9 +30,10 @@ class ThemeChangerScreen extends ConsumerWidget {
             icon: Icon(isDarkmode ? Icons.dark_mode_outlined : Icons.light_mode_outlined),
             onPressed: () {
               //cambiamos el estado del valor booleano referente al modo dark o light
-              ref.read(isDarkmodeProvider.notifier)
-                .update((state) => !state);
-              
+              //lo comentamos porque como arriba usamos el provider themeNotifierProvider
+              // ref.read(isDarkmodeProvider.notifier)
+              //   .update((state) => !state);
+              ref.read(themeNotifierProvider.notifier).toggleDarkMode(); //llamamos al metodo toggleDarkMode del themeNotifierProvider
             },
           )
         ],
@@ -51,7 +55,10 @@ class _ThemeChangerView extends ConsumerWidget {
 
     //usamos los provider creado en theme_provider
     final List<Color> colors = ref.watch(colorListProvider);
-    final int selectedColor = ref.watch(selectedColorProvider);
+
+    //comentamos la linea de abajo porque usamos themeNotifierProvider en lugar del selectedColorProvider
+    //final int selectedColor = ref.watch(selectedColorProvider);
+    final int selectedColor = ref.watch(themeNotifierProvider).selectedColor; //usamos la propiedad selecterColor del themeNotifierProvider
    
     //creamos un listado donde contendra todos los colores configurados en el app_thme
     return ListView.builder(
@@ -67,7 +74,9 @@ class _ThemeChangerView extends ConsumerWidget {
           onChanged: ( value ) {
             //notificamos el cambio, cambiamos el estado indicando el index del elemento de la lista seleccionado
             //esta en la variable value y esta variable value se pasa por parametro al onChanged
-            ref.read(selectedColorProvider.notifier).state = index;
+            //modidificamos la linea de abajo ya que usamos como provider el themeNotifierProvider en lugar del selectedColorProvider
+            //ref.read(selectedColorProvider.notifier).state = index;
+            ref.read(themeNotifierProvider.notifier).changeColorIndex(index); //usamos el metodo del themeNotifierProvider y le pasamos el indice de la lista de colores seleccionado
           }
         );
       });
