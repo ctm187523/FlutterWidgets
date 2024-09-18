@@ -51,7 +51,8 @@ class _HomeView extends StatelessWidget {
           //en lugar de mostrar el texto de arriba usamos el widget ListTile mas
           //adecuado para mostrar listas, creado en la clase privada _CustomListTile
           return _CustomListTile(menuItem: menuItem);
-        });
+        }
+      );
   }
 }
 
